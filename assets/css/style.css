@@ -1,4 +1,51 @@
+.container {
+width: 800px !important;
+margin: 0 auto !important;
+display: block !important;
+}
+
+.header {
+width: 800px !important;
+margin: 0 auto !important;
+display: block !important;
+}
+
 .crystal-image {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
   }
+
+  .display-4 {
+      text-align: center !important;
+      font-family: 'Great Vibes', cursive !important;
+  }
+
+  .winning {
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+  }
+
+  .lead {
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+    /* border-style: dashed; */
+  }
+
+  table, th {
+    border: 1px solid rgb(84, 89, 94);
+    padding: 15px;
+  }
+  .btn-info {
+    background-color: #DB7093 !important;
+    border-color: #DB7093 !important;
+  }
+
+  .btn-dark {
+    background-color:  #C71585 !important;
+    border-color: #C71585 !important;
+  }
+
+  .buttons {
+      float: right;
+  }
+

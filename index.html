@@ -5,21 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Crystal Game</title>
+    <title>Crystal Collector</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/javascript/game.js">
-
-    <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
+    <audio id="mySoundClip" preload="auto" src="./assets/sounds/gem-ping.wav.wav"></audio>
 
 </head>
 
 <body>
+    <br>
+    <div class="container">
 
-    <h1>Number to Guess: <span id="number-to-guess"></span></h1>
+        <div class="row">
 
-    <div id="crystals">
+            <div class="col-xs-9">
+                <!-- <div class="header"> -->
+                <h1 class="display-4">Crystal Collector</h1>
+                <!-- </div> -->
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-xs-4">
+                <hr class="my-4">
+                <p class="lead">Click on any crystal to start the game. Good luck!</p>
+            </div>
+
+            <div class="col-xs-5">
+                <div class="buttons">
+                    <button type="button" class="btn btn-info">Number to Guess: <span
+                            id="number-to-guess"></span></button>
+                    <button type="button" class="btn btn-info">Your Score: <span id="new-score"></span></button>
+                    <button type="button" class="btn btn-dark">New Game</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-5">
+                <h1 class="winning"> <span id="you-win"></span></h1>
+                <h1 class="lead"> <span id="you-lose"></span></h1>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-xs-5">
+                <div id="crystals">
+                </div>
+            </div>
+        </div>
+        <br>
+
+
+
+
     </div>
+
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="./assets/javascript/game.js"></script>
