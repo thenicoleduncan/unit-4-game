@@ -7,7 +7,7 @@ $("#number-to-guess").text(targetNumber);
 
 var counter = 0;
 
-var numberOptions = [10, 5, 3, 7];
+var numberOptions = [12, 3, 5, 8];
 
 
 for (var i = 0; i < numberOptions.length; i++) {
@@ -23,27 +23,31 @@ for (var i = 0; i < numberOptions.length; i++) {
     $("#crystals").append(imageCrystal);
 }
 
-    $(".crystal-image").on("click", function() {
-        var audio = $("#mySoundClip")[0];
-        audio.play();
-    
-        var crystalValue = ($(this).attr("data-crystalvalue"));
-        crystalValue = parseInt(crystalValue);
-        counter += crystalValue;
-    
-        $("#new-score").text(counter);
-    
-        if (counter === targetNumber) {
-            $("#you-win").text(youWin);
-            
-        }
-    
-        else if (counter >= targetNumber) {
-            $("#you-lose").text(youLose);
-        }
-    
-      });
+$(".crystal-image").on("click", function () {
+    var audio = $("#mySoundClip")[0];
+    audio.play();
 
+    var crystalValue = ($(this).attr("data-crystalvalue"));
+    crystalValue = parseInt(crystalValue);
+    counter += crystalValue;
 
+    $("#new-score").text(counter);
 
+    if (counter === targetNumber) {
+        $("#you-win").text(youWin);
 
+    }
+
+    else if (counter >= targetNumber) {
+        $("#you-lose").text(youLose);
+    }
+
+});
+
+// my attempt at a "restart the game" function ... not functional so I know it needs work. 
+
+$("#clear").on("click", function() {
+
+    $("#new-score").empty();
+
+    });
