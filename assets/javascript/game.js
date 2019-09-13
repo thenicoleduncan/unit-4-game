@@ -46,11 +46,18 @@ $(".crystal-image").on("click", function () {
 
 // my attempt at a "restart the game" function ...
 
-$("#new-game").on("click", function() {
+$("#new-game").on("click", function () {
 
     $("#new-score").text(0);
     (counter = 0);
     // $("#you-win").text(youWin);
     // $("#you-lose").text(youLose);
 
-    });
+});
+
+// working on adding it to my portfolio..............
+
+// After completing the homework please add the piece to your portfolio.
+// Make sure to add a link to your updated portfolio in the comments section of your homework so the 
+// TAs can easily ensure you completed this step when they are grading the assignment.To receive an 'A' 
+// on any assignment, you must link to it from your portfolio.
