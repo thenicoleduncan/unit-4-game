@@ -44,10 +44,13 @@ $(".crystal-image").on("click", function () {
 
 });
 
-// my attempt at a "restart the game" function ... not functional so I know it needs work. 
+// my attempt at a "restart the game" function ...
 
-$("#clear").on("click", function() {
+$("#new-game").on("click", function() {
 
-    $("#new-score").empty();
+    $("#new-score").text(0);
+    (counter = 0);
+    // $("#you-win").text(youWin);
+    // $("#you-lose").text(youLose);
 
     });
