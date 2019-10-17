@@ -2,12 +2,33 @@
 width: 800px !important;
 margin: 0 auto !important;
 display: block !important;
+
+}
+
+body {
+  background-color: #f4f4f4;
 }
 
 .header {
 width: 800px !important;
 margin: 0 auto !important;
 display: block !important;
+}
+
+.jumbotron {
+  font-family: 'Great Vibes', cursive;
+  color: #c0b283;  
+  background-color: #f4f4f4;
+  
+}
+
+.h1 {
+  font-size: 70px !important;
+}
+
+.card-header {
+  background-color: #dcd0c0 !important;
+  color: #373737 !important;
 }
 
 .crystal-image {

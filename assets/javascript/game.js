@@ -1,63 +1,113 @@
 
-var targetNumber = 53;
-var youWin = ("You win!! 💎");
-var youLose = ("You lose!! 👎");
+var crystal = {
+    blue:
+    {
+        name: "Blue",
+        value: 0
+    },
+    green:
+    {
+        name: "Green",
+        value: 0
+    },
+    red:
+    {
+        name: "Red",
+        value: 0
+    },
+    yellow:
+    {
+        name: "Yellow",
+        value: 0
+    }
+};
 
-$("#number-to-guess").text(targetNumber);
+var currentScore = 0;
+var targetScore = 0;
 
-var counter = 0;
+var winCount = 0;
+var lossCount = 0;
 
-var numberOptions = [12, 3, 5, 8];
 
+// FUNCTIONS
 
-for (var i = 0; i < numberOptions.length; i++) {
+var getRandom = function (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
-    var imageCrystal = $("<img>");
+var startGame = function () {
 
-    imageCrystal.addClass("crystal-image");
+    currentScore = 0;
 
-    imageCrystal.attr("src", "./assets/images/pink-gem.JPG");
+    targetScore = getRandom(19, 120);
 
-    imageCrystal.attr("data-crystalvalue", numberOptions[i]);
+    crystal.blue.value = getRandom(1, 12);
+    crystal.red.value = getRandom(1, 12);
+    crystal.green.value = getRandom(1, 12);
+    crystal.yellow.value = getRandom(1, 12);
 
-    $("#crystals").append(imageCrystal);
-}
+    $("#your-score").text(currentScore);
+    $("#target-score").text(targetScore);
 
-$(".crystal-image").on("click", function () {
-    var audio = $("#mySoundClip")[0];
-    audio.play();
+    console.log("-----------------------------------");
+    console.log("Target Score: " + targetScore);
+    console.log("Blue: " + crystal.blue.value + " | Green: " + crystal.green.value + " | Red: " + crystal.red.value +
+        " | Yellow: " + crystal.yellow.value);
+    console.log("-----------------------------------");
+};
 
-    var crystalValue = ($(this).attr("data-crystalvalue"));
-    crystalValue = parseInt(crystalValue);
-    counter += crystalValue;
+var checkWin = function () {
 
-    $("#new-score").text(counter);
+    if (currentScore > targetScore) {
+        alert("Sorry. You lost!");
+        console.log("You Lost");
 
-    if (counter === targetNumber) {
-        $("#you-win").text(youWin);
+        lossCount++;
 
+        $("#loss-count").text(lossCount);
+
+        startGame();
     }
 
-    else if (counter >= targetNumber) {
-        $("#you-lose").text(youLose);
+    else if (currentScore === targetScore) {
+        alert("Congratulations! You Won!");
+        console.log("You Won!");
+
+        winCount++;
+
+        $("#win-count").text(winCount);
+
+        startGame();
     }
 
+};
+
+var addValues = function (clickedCrystal) {
+
+    currentScore += clickedCrystal.value;
+
+    $("#your-score").text(currentScore);
+
+    checkWin();
+
+    console.log("Your Score: " + currentScore);
+};
+
+startGame();
+
+$("#blue").click(function () {
+    addValues(crystal.blue);
 });
 
-// my attempt at a "restart the game" function ...
-
-$("#new-game").on("click", function () {
-
-    $("#new-score").text(0);
-    (counter = 0);
-    // $("#you-win").text(youWin);
-    // $("#you-lose").text(youLose);
-
+$("#red").click(function () {
+    addValues(crystal.red);
 });
 
-// working on adding it to my portfolio..............
+$("#green").click(function () {
+    addValues(crystal.green);
+});
 
-// After completing the homework please add the piece to your portfolio.
-// Make sure to add a link to your updated portfolio in the comments section of your homework so the 
-// TAs can easily ensure you completed this step when they are grading the assignment.To receive an 'A' 
-// on any assignment, you must link to it from your portfolio.
+$("#yellow").click(function () {
+    addValues(crystal.yellow);
+});
+
